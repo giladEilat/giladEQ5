@@ -3,8 +3,22 @@ package csYa_ronny;
 public class ArrayMerger {
     public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
         // TODO: Implement the logic to merge two sorted arrays
-        return new int[] {};  // Return an empty array by default
-    }
+        int[]arr = new int[arr1.length+arr2.length];
+        int i=0, j=0, k=0;
+        while (i<arr1.length && j<arr2.length){
+            if (arr1[i]<arr2[j]){
+                arr[k]=arr1[i];
+                i++;
+                k++;
+            }
+            if (arr1[i]>arr2[j]){
+                arr[k]=arr1[j];
+                j++;
+                k++;
+            }
+        }
+        return arr;
+       }
 
     public static void main(String[] args) {
         // דוגמה לשימוש בשיטה
